@@ -23,12 +23,17 @@ def show_info(sep=':',**info):
 # myinfo_dict = {'name':'xiongben','age':26,'love':'coding'}
 # show_info(**myinfo_dict,sport='football',sep='=>')
 
-xiongben = Person("football","media")
-xiongben.eat()
-print('the weight of xiongben is {0}'.format(xiongben.weight))
-xiongben.weight = 140
-print('the weight of xiongben is {0}'.format(xiongben.weight))
-Person.occupation("web engineer")
+def testClassMethod():
+    xiongben = Person("football","media")
+    xiongben.eat()
+    print('the weight of xiongben is {0}'.format(xiongben.weight))
+    xiongben.weight = 140
+    print('the weight of xiongben is {0}'.format(xiongben.weight))
+    Person.occupation("web engineer")
+ 
+
+# testClassMethod()
+
 
 @app.route('/')
 def hello_world():
