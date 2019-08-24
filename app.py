@@ -1,6 +1,7 @@
 #coding=utf-8
 
 from flask import Flask
+from Person import Person
 
 app = Flask(__name__)
 
@@ -21,6 +22,13 @@ def show_info(sep=':',**info):
 # show_info(name='xiongben',age=26,love="copy")
 # myinfo_dict = {'name':'xiongben','age':26,'love':'coding'}
 # show_info(**myinfo_dict,sport='football',sep='=>')
+
+xiongben = Person("football","media")
+xiongben.eat()
+print('the weight of xiongben is {0}'.format(xiongben.weight))
+xiongben.weight = 140
+print('the weight of xiongben is {0}'.format(xiongben.weight))
+Person.occupation("web engineer")
 
 @app.route('/')
 def hello_world():
