@@ -1,7 +1,11 @@
 #coding=utf-8
 
 from flask import Flask
-from Person import Person
+from person.xb import XB
+
+from bs4 import BeautifulSoup
+
+
 
 app = Flask(__name__)
 
@@ -34,6 +38,9 @@ def testClassMethod():
 
 # testClassMethod()
 
+# school1 = School()
+print(XB)
+xb1 = XB(27)
 
 @app.route('/')
 def hello_world():
