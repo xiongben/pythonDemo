@@ -2,6 +2,7 @@
 
 from flask import Flask
 from person.xb import XB
+from person.pic import getpictest
 
 from bs4 import BeautifulSoup
 
@@ -39,8 +40,11 @@ def testClassMethod():
 # testClassMethod()
 
 # school1 = School()
-print(XB)
-xb1 = XB(27)
+# print(XB)
+# xb1 = XB(27)
+getpictest()
+
+
 
 @app.route('/')
 def hello_world():
