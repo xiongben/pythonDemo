@@ -1,11 +1,11 @@
 #coding=utf-8
 
-from flask import Flask
+from flask import Flask,jsonify
 from person.xb import XB
 from person.pic import getpictest
 
 from bs4 import BeautifulSoup
-
+from dao.account_dao import AccountDao
 
 
 app = Flask(__name__)
@@ -49,6 +49,12 @@ getpictest()
 @app.route('/')
 def hello_world():
     return 'Hello Flask!'
+
+@app.route('/getaccount')
+def get_account():
+    account = AccountDao()
+    res = account.findbyid(0)
+    return jsonify(res)
 
 
 if __name__ == '__main__':
